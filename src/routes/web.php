@@ -15,4 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/user', 'UserController@index');
+
+// BBSページのルーティング
+Route::get('/bbs', 'BbsController@index');
+Route::post('/bbs', 'BbsController@create');
+
 Route::get('/hello', 'HelloController@hello');
