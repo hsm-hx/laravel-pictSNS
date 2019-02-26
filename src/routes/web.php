@@ -20,4 +20,13 @@ Route::get('/user', 'UserController@index');
 Route::get('/bbs', 'BbsController@index');
 Route::post('/bbs', 'BbsController@create');
 
+// GitHubログイン機能のルーティング
+Route::get('github', 'Github\GithubController@top');
+Route::post('github/issue', 'Github\GithubController@createIssue');
+Route::get('login/github', 'Auth\LoginController@redirectToProvider');
+Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');
+
+// ログイン機能のルーティング
+Route::post('user', 'User\UserController@updateUser');
+
 Route::get('/hello', 'HelloController@hello');
